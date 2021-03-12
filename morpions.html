@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>MORPIONS JS</title>
+
+    </head>
+
+    <body>
+        <div id="wrapper">
+
+            <form>
+                <h1>Morpions JS</h1>
+                <section id="renseignements">
+                    <div id="infosJ1" class="infos">
+                        <h2>Joueur 1</h2>
+                        <input type="text" name="nomJ1" id="nomJ1" placeholder="Entrez nom du J1">
+                    </div>
+                    <div id="infosJ2" class="infos">
+                        <h2>Joueur 2</h2>
+                        <input type="text" name="nomJ2" id="nomJ2" placeholder="Entrez nom du J2">
+                    </div>
+                </section>
+                <input type="submit" value="JOUER" id="send">
+            </form>
+
+
+            <h1>Morpions JS</h1>
+            <h3 id="tour" class="player1">Au tour&nbsp;</h3>
+
+            <section id="plateau">
+
+                <div id="endgame">
+                    <p></p>
+                </div>
+
+                <!-- On crée les cellules de la grille. A chacune est associé
+                    un couple ou un triplé de coordonnées en tant que classes.
+                    Ceci permettra de retourner des nodeslist sur lesquelles
+                    boucler lorsque l'on voudrait savoir si toute une rangée (ex: l1)
+                    contient le même symbole. Auquel cas celà voudrait dire victoire
+                    d'un des deux joueurs. -->
+                <div id="c1" class="cell l1 c1 d1 libre"></div>
+                <div id="c2" class="cell l1 c2 libre"></div>
+                <div id="c3" class="cell l1 c3 d2 libre"></div>
+                <div id="c4" class="cell l2 c1 libre"></div>
+                <div id="c5" class="cell l2 c2 d1 d2 libre"></div>
+                <div id="c6" class="cell l2 c3 libre"></div>
+                <div id="c7" class="cell l3 c1 d2 libre"></div>
+                <div id="c8" class="cell l3 c2 libre"></div>
+                <div id="c9" class="cell l3 c3 d1 libre"></div>
+
+                
+            </section>
+
+            <h2 id="counter">Nombre de parties jouées </h2>
+
+            <section id="players">
+                <section id="player1" class="player">
+                    <h3></h3>
+                    <p>Symbole X</p>
+                    <p id="v1">Nombre de victoires : </p>
+                    <p class="nul">Nombre de nuls : </p>
+                </section>
+                <section id="player2" class="player">
+                    <h3></h3>
+                    <p>Symbole O</p>
+                    <p id="v2">Nombre de victoires : </p>
+                    <p class="nul">Nombre de nuls : </p>
+                </section>
+            </section>
+            
+        </div>
+        <script src="app.js"></script>
+    </body>
+
+</html>

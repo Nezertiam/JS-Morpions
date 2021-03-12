@@ -1,0 +1,164 @@
+:root{
+    --dujoueur1: "du joueur 1";
+    --dujoueur2: "du joueur 2";
+    --nomjoueur1: "Joueur 1";
+    --nomjoueur2: "Joueur 2";
+    --nombreParties: "0";
+    --v1: "0";
+    --v2: "0";
+    --draw: "0";
+}
+h1{
+    margin: 0;
+    padding: 0.6em 0;
+}
+*{
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+#wrapper{
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+}
+#plateau{
+    display: grid;
+    margin: 0 auto;
+    max-width: 345px;
+    grid-auto-rows: 115px;
+    grid-auto-columns: 115px;
+    grid-template-areas: "a a a";
+}
+.cell{
+    border: 1px solid lightgrey;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.cell:hover{
+    background-color: lightgrey;
+    cursor: pointer;
+}
+img{
+    width: 80%;
+}
+h1, h3{
+    text-align: center;
+}
+.player1:after{
+    content: var(--dujoueur1);
+}
+.player2:after{
+    content: var(--dujoueur2);
+}
+.dispnone{
+    display: none;
+}
+form{
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: linear-gradient(70deg, rgb(131, 37, 37) 0%, rgb(87, 64, 202) 75%);
+}
+#renseignements{
+    display: flex;
+}
+.infos{
+    flex: 1;
+    text-align: center;
+}
+.infos input{
+    text-align: center;
+    padding: 0.5em 0;
+}
+#send{
+    display: block;
+    margin: 5rem auto 0;
+    font-size: 3em;
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-weight: bolder;
+}
+#send:hover{
+    color: red;
+}
+
+/*--------------------------------------- ENGAME ------------------------------------------------------------*/
+
+
+#endgame{
+    position: absolute;
+    height: 345px;
+    width: 345px;
+    z-index: 2;
+    display: none;
+    background: linear-gradient(70deg, rgba(65, 16, 16, 0.466) 0%, rgba(98, 74, 218, 0.486) 90%);
+    cursor: pointer;
+}
+#endgame.dispblock{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#endgame p{
+    font-size: 1.5em;
+    text-align: center;
+}
+#endgame p:before{
+    color: red;
+    font-weight: bolder;
+    text-shadow: black 1px 1px 10px;
+}
+
+#endgame.p1win p:before{
+    content: var(--nomjoueur1);
+}
+#endgame.p1win p:after{
+    content: " a gagné ! Cliquez pour recommencer !";
+}
+
+#endgame.p2win p:before{
+    content: var(--nomjoueur2);
+}
+#endgame.p2win p:after{
+    content:" a gagné ! Cliquez pour recommencer !";
+}
+
+#endgame.draw p:before{
+    content: "égalité ! ";
+    text-transform: uppercase;
+}
+#endgame.draw p:after{
+    content: "Cliquez pour recommencer !";
+}
+#players{
+    display: flex;
+}
+.player{
+    flex: 1;
+}
+#player1 h3:before{
+    content: var(--nomjoueur1)
+}
+#player2 h3:before{
+    content: var(--nomjoueur2)
+}
+#counter, .player p{
+    text-align: center;
+}
+#counter:after{
+    content: var(--nombreParties);
+    color: red;
+}
+#v1:after{
+    content: var(--v1);
+}
+#v2:after{
+    content: var(--v2);
+}
+.nul:after{
+    content: var(--draw)
+}
